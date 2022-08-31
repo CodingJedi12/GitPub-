@@ -10,7 +10,7 @@
     <h1>Drinks!</h1>
     <ul>
         <% for (i = 0; i < allDrinks.length; i++) { %>
-            <li><%= allDrinks[i].name.toUpperCase() %></li>
+            <li><%= allDrinks[i].name[0].toUpperCase() + allDrinks[i].name.slice(1, allDrinks[i].name.length) %></li>
        <% } %>
     </ul>
     

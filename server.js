@@ -3,6 +3,7 @@
 ////////////////////////
 const express = require('express');
 const drinks = require("./models/drinks.js")
+const food = require("./models/food.js")
 
 ////////////////////////
 //INITIALIZING EXPRESS APP
@@ -21,7 +22,7 @@ app.get("/", (req, res) => {
 
 //drink names page route
 app.get("/drinks", (req, res) => {
-    //applies the value of fruits to the allFruits object that we can utilize in index.ejs
+    //applies the value of drinks to the allDrinks object that we can utilize in index.ejs
     res.render("drinks_index.ejs", {
       allDrinks: drinks,
     })
@@ -31,6 +32,21 @@ app.get("/drinks", (req, res) => {
 app.get("/drinks/:id", (req, res) => {
     res.render("drinks_show.ejs", {
         drinkInfo: drinks[req.params.id]
+    })
+})
+
+//food names page route
+app.get("/foods", (req, res) => {
+    //applies the value of foods to the allFoods object that we can utilize in index.ejs
+    res.render("food_index.ejs", {
+      allFoods: food,
+    })
+})
+
+//index food ID
+app.get("/foods/:id", (req, res) => {
+    res.render("food_show.ejs", {
+        foodInfo: food[req.params.id]
     })
 })
 

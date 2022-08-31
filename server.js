@@ -19,10 +19,15 @@ app.get("/", (req, res) => {
     res.send("Welcome to the GitPub App!")
 })
 
-//drinks json page
+//index drink names page route
 app.get("/drinks", (req, res) => {
-    res.send(drinks)
+    //applies the value of fruits to the allFruits object that we can utilize in index.ejs
+    res.render("drinks_index.ejs", {
+      allDrinks: drinks,
+    })
 })
+
+
 ////////////////////////
 //CAN YOU HEARRRRR MEEEE
 ////////////////////////
